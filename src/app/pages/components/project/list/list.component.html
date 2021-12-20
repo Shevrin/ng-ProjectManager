@@ -1,0 +1,12 @@
+<p>list works!</p>
+<div>
+<ul>
+  <ng-container *ngFor="let item of projectsList">
+    <li [routerLink]="'/project/' + item.id">
+        {{ item.subject }}
+    </li>
+  </ng-container>
+
+</ul>
+
+</div>

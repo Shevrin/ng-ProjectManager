@@ -1,0 +1,5 @@
+<h3>Введите JSON</h3>
+<textarea class="text-body" placeholder="enter your JSON..." [(ngModel)]="data" (keydown.enter)="toSave()"></textarea>
+<div class="d-grid gap-2">
+<button class="btn btn-light" (click)="toSave()" >Сохранить</button>
+</div>
