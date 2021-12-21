@@ -1,9 +1,15 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import localeRu from '@angular/common/locales/ru';
+
 import { PagesModule } from "./pages/pages.module";
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from "./app-routing.module";
 import {FormsModule} from "@angular/forms";
+import { ProjectsService } from './pages/components/services/projects.service';
+
+registerLocaleData(localeRu, 'ru');
 
 @NgModule({
   declarations: [
@@ -16,7 +22,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [ProjectsService, { provide: LOCALE_ID, useValue: 'ru' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
