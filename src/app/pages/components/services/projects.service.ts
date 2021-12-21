@@ -5,7 +5,6 @@ import {Injectable} from '@angular/core';
 })
 export class ProjectsService {
 
-
   public getProjects(): Array<any> {
     return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
   }
@@ -29,6 +28,10 @@ export class ProjectsService {
       description: item.description
     })
   }
+
+	public saveChanges(){
+		
+	}
 
   constructor() {
   }

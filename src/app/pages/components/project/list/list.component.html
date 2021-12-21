@@ -1,19 +1,17 @@
-<p>list works!</p>
-<div class="col-sm">
-<ul class="list-group list-group-flush border">
+
+<div class="project-list">
+<ul class="item-list">
   <ng-container *ngFor="let item of projectsList">
-    <li class="list-group-item text-muted" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" >
-		<a class="nav-link text-reset" [routerLink]="['/project', item.id]" >
-		<div class="item-list">
-		<small class="text-opacity-25">{{ item.startDate | date : 'dd MMMM yyyy'  }} - {{ item.endDate | date : 'dd MMMM yyyy'}}</small>
-			<p class="fw-bold fs-1 lh-base"> {{ item.subject }}</p>
-			<p class="text-end fs-6 text-opacity-25"> {{ item.createdBy }} </p>
+    <li class="item-list__item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" >
+		<a class="item-list__link" [routerLink]="['/projects', item.id]" >
+		<div class="item-info">
+		<small class="item-info__subtext">{{ item.startDate | date : 'dd MMMM yyyy'  }} - {{ item.endDate | date : 'dd MMMM yyyy'}}</small>
+			<p class="item-info__maintext"> {{ item.subject }}</p>
+			<small class="item-info__subtext item-info__subtext_signature"> {{ item.createdBy }} </small>
 		</div>
 	</a>
-		        
     </li>
   </ng-container>
-
 </ul>
 
 </div>

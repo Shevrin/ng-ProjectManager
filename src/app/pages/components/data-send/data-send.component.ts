@@ -10,7 +10,7 @@ export class DataSendComponent implements OnInit {
    constructor() { }
 
   toSave(){
-localStorage.setItem('Projects', this.data )
+    localStorage.setItem('Projects', this.data )
     this.data = ''
   }
 

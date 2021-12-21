@@ -1,0 +1,37 @@
+.project {
+  align-items: center;
+  margin-left: 20px;
+}
+
+
+.project-card {
+  border-collapse: separate;
+  border-spacing: 20px 10px;
+  color: grey;
+}
+
+.project-card__head {
+  color: grey;
+}
+
+.project-card__data {
+  opacity: 50%;
+  opacity: 50%;
+  font-weight: bold;
+  color: grey;
+}
+
+.project-card__btn {
+  width: 300px;
+  border-radius: 4px;
+}
+
+.input {
+  background: inherit;
+  border: 0;
+  font: inherit;
+  line-height: normal;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+}

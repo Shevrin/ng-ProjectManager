@@ -1,2 +1,32 @@
-<p contenteditable="true">card works!</p>
-<button class="btn border">Изменить</button>
+
+<div class="project" *ngIf="cardProject; else noProject">
+<h2> <input type="text" class = "input" [value] = "subject"></h2>
+<table class="project-card">
+<tr >
+    <td class="project-card__data">Дата Начала</td>
+    <td class="project-card__data">Дата окончания</td>
+    <td class="project-card__data">Автор</td>
+  </tr>
+  <tr>
+    <td> <input type="text" class = "input" [value] = "startDate | date : 'dd.MM.yyyy'" (input)="addChanges($event)" ></td>
+    <td> <input type="text" class = "input" [ngModel]="endDate | date : 'dd.MM.yyyy'"(change)="addChanges($event)"></td>
+    <!-- <td contenteditable="true" [textContent] = "createdBy"></td> -->
+    <td> <input type="text" class = "input" [value] = "createdBy" (change)="addChanges($event)"/> </td>
+  </tr>
+  <tr>
+    <td class="project-card__data">Описание</td>
+		</tr>
+  <tr>
+    <td contenteditable="true" colspan = "3" [textContent] = "description" (change)="addChanges($event)"></td>
+		</tr>
+		</table>
+<button class="project-card__btn" (click) =" add()" >Изменить</button>
+</div>
+
+<ng-template #noProject >
+<h2>
+Выберите проект
+</h2>
+</ng-template>
+
+<h2>{{endDate}}</h2>
