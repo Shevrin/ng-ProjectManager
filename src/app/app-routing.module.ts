@@ -9,12 +9,15 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'data'},
   {path: 'data', component: DataSendComponent},
   {path: 'projects', component: ProjectsComponent},
-  {
-    path: 'project', outlet: 'project',  pathMatch: 'full',
+  {path:'', outlet: 'project', redirectTo: 'project', pathMatch: 'full',
     children: [
-      {path: ':id', outlet: 'project', component: CardComponent},
+      { path: ':id', outlet: 'project', component: CardComponent },
+    ],},
+  {
+    path: 'project', children: [
+      { path: ':id', outlet: 'project', component: CardComponent },
     ],
-  },
+  }
 ]
 
 @NgModule({
