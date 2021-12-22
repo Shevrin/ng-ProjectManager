@@ -4,7 +4,7 @@
 }
 
 .input-main {
-  margin: 0 20px;
+  margin: 0 34px;
   text-align: center;
 }
 
@@ -28,7 +28,7 @@
 .project-card__btn {
   width: 300px;
   border-radius: 4px;
-  margin-left: 90px;
+  margin-left: 40px;
   background-color: grey;
   color: white;
 }
