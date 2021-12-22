@@ -34,5 +34,7 @@
 }
 
 .item-info__subtext_signature {
-  text-align: 10px
+  display: block;
+  text-align: right;
+
 }
