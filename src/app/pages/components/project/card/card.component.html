@@ -1,6 +1,6 @@
 
 <div class="project" *ngIf="cardProject; else noProject">
-<h2> <input type="text" class = "input" [value] = "subject"></h2>
+<h2> <input type="text" class = "input" [value] = "subject" (change)="changeSubject($event)"></h2>
 <table class="project-card">
 <tr >
     <td class="project-card__data">Дата Начала</td>
@@ -8,19 +8,20 @@
     <td class="project-card__data">Автор</td>
   </tr>
   <tr>
-    <td> <input type="text" class = "input" [value] = "startDate | date : 'dd.MM.yyyy'" (input)="addChanges($event)" ></td>
-    <td> <input type="text" class = "input" [ngModel]="endDate | date : 'dd.MM.yyyy'"(change)="addChanges($event)"></td>
-    <!-- <td contenteditable="true" [textContent] = "createdBy"></td> -->
-    <td> <input type="text" class = "input" [value] = "createdBy" (change)="addChanges($event)"/> </td>
+    <td> <input type="text" class = "input input-date" [value] = "startDate | date : 'dd.MM.yyyy'" (input)="changeDateStart($event)" ></td>
+    <td> <input type="text" class = "input input-date"  [value]= "endDate | date : 'dd.MM.yyyy'"(change)="changeDateEnd($event)"></td>
+    <!-- <td contenteditable="true" #createdBy [textContent] = "createdBy" (change)="addChanges($event)"></td> -->
+    <td> <input type="text" class = "input input-name" [value] = "createdBy" (change)="changeAuthor($event)"/> </td>
   </tr>
   <tr>
     <td class="project-card__data">Описание</td>
 		</tr>
   <tr>
-    <td contenteditable="true" colspan = "3" [textContent] = "description" (change)="addChanges($event)"></td>
+    <td colspan = "4" > <textarea rows= "3" cols="60" class = "input" [value] ="description" (change)="changeDescription($event)"></textarea></td>
+    <!-- <td contenteditable="true" colspan = "3"  #description >{{description}}</td> -->
 		</tr>
 		</table>
-<button class="project-card__btn" (click) =" add()" >Изменить</button>
+<button class="project-card__btn" (click) ="add()" >Изменить</button>
 </div>
 
 <ng-template #noProject >
@@ -29,4 +30,4 @@
 </h2>
 </ng-template>
 
-<h2>{{endDate}}</h2>
+

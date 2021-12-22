@@ -29,8 +29,41 @@ export class ProjectsService {
     })
   }
 
-	public saveChanges(){
+	public saveChanges(id: any, elem: Record<string, any>){
+		console.log(this.getProjects());
+		this.getProjects().forEach(item => {console.log(item.id)
+		if (item.id === id) {
+			
+		}
+		console.log(id)}
+		)
 		
+		
+		let newArr = this.getProjects().filter(item => {
+			// if (item.id === !id ) {
+			item.id !== id 
+				// console.log(item.id);
+				// console.log('item',item);
+				// console.log('elem',elem);
+				// // item = elem
+				// console.log(item.id);
+				// console.log('item',item);
+				// console.log('elem',elem);
+				// }
+				
+			}
+			)
+			console.log(newArr);
+			
+			let newData: Record<string, any> = {"Projects": []}
+			console.log(newData);
+			
+			newData['Projects'] = newArr
+			console.log(newData);
+			
+		// changeElem = elem
+		
+		// localStorage.setItem('Projects', JSON.stringify(this.getProjects()) )
 	}
 
   constructor() {

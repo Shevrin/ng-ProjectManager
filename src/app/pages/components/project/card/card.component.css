@@ -34,4 +34,13 @@
   outline: 0;
   padding: 0;
   text-align: left;
+  resize: none;
+}
+
+.input-date {
+  width: 60px;
+}
+
+.input-name {
+  width: 150px;
 }
