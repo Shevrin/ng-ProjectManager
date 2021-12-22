@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
 import {FormsModule} from '@angular/forms';
+
 import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {MainComponent} from './components/main/main.component';
 import {DataSendComponent} from "./components/data-send/data-send.component";
