@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import {ProjectsService} from "../../services/projects.service";
 
 @Component({
@@ -7,9 +8,6 @@ import {ProjectsService} from "../../services/projects.service";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent{
-public projectsList: Array<any> = []
-  constructor(private projectService: ProjectsService) {
-   this.projectsList = this.projectService.getList()
-  }
-
+@Input() public projectsList: Array<any> = []
+	
 }
