@@ -3,6 +3,10 @@
   margin-left: 20px;
 }
 
+.input-main {
+  margin: 0 20px;
+  text-align: center;
+}
 
 .project-card {
   border-collapse: separate;
@@ -24,6 +28,9 @@
 .project-card__btn {
   width: 300px;
   border-radius: 4px;
+  margin-left: 90px;
+  background-color: grey;
+  color: white;
 }
 
 .input {
@@ -33,12 +40,11 @@
   line-height: normal;
   outline: 0;
   padding: 0;
-  text-align: left;
   resize: none;
 }
 
 .input-date {
-  width: 60px;
+  width: 80px;
 }
 
 .input-name {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from 'src/app/pages/services/projects.service';
 
 @Component({
   selector: 'app-data-send',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-send.component.css']
 })
 export class DataSendComponent implements OnInit {
-  data:string = ''
-   constructor() { }
+	public error: string = '';
+  public data:string = ''
+   constructor(private projectsService: ProjectsService) { }
 
   toSave(){
-    localStorage.setItem('Projects', this.data )
-    this.data = ''
+    this.error = this.projectsService.toSave(this.data);
+    this.data = '';
   }
 
   ngOnInit(): void {

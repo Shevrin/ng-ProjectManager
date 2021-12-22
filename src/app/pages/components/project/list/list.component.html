@@ -1,7 +1,7 @@
 
 <div class="project-list">
 <ul class="item-list">
-  <ng-container *ngFor="let item of projectsList">
+  <ng-container *ngFor="let item of (projectsList$ | async)">
     <li class="item-list__item" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" >
 		<a class="item-list__link" [routerLink]="['/projects', item.id]" >
 		<div class="item-info">

@@ -1,5 +1,5 @@
-import {Component, ElementRef, Input, OnChanges, ViewChild} from '@angular/core';
-import {ProjectsService} from "../../services/projects.service";
+import {Component, Input, OnChanges} from '@angular/core';
+import {ProjectsService} from "src/app/pages/services/projects.service";
 
 @Component({
   selector: 'app-card',
@@ -8,12 +8,6 @@ import {ProjectsService} from "../../services/projects.service";
 })
 export class CardComponent implements OnChanges {
  @Input() idProject: string | null = '';
-
-// @ViewChild('subject')	subj!: ElementRef;
-// @ViewChild ('startDate') start! : ElementRef ;
-// @ViewChild ('endDate') end!: ElementRef ;
-// @ViewChild ('createdBy') author!: ElementRef ;
-// @ViewChild ('description') descr!: ElementRef ;
 
   public id: string = '';
   public error: any = '';
@@ -26,9 +20,9 @@ export class CardComponent implements OnChanges {
 
 public newData: Record<string, any> = {}
 
+
 add(){
-	// console.log(this.projectsService.getProjects())
-	// console.log(this.cardProject)
+
 	if (this.cardProject) {
 	this.cardProject["subject"] = this.subject
 	this.cardProject["startDate"] = this.startDate
@@ -37,12 +31,6 @@ add(){
 	this.cardProject["description"] = this.description
 	this.projectsService.saveChanges(this.id, this.cardProject)
 	}
-// console.log(this.description)
-// console.log(this.createdBy)
-// console.log(this.subject)
-// console.log(this.endDate)
-// console.log(this.startDate)
-// 	console.log(this.cardProject)
 
 }
 public changeDescription (event: any): void{
@@ -54,10 +42,14 @@ public changeSubject (event: any): void {
 this.subject = event.target.value
 }
 public changeDateStart (event: any): void {
-this.startDate = event.target.value
+	const dateArr: Array<number> = event.target.value.split('.');
+	let newDate: string = new Date(dateArr[2], dateArr[1] -1 ,dateArr[0]).toString()
+	this.startDate = newDate
 }
 public changeDateEnd (event: any): void {
-this.endDate = event.target.value
+	const dateArr: Array<number> = event.target.value.split('.');
+	let newDate: string = new Date(dateArr[2], dateArr[1] -1 ,dateArr[0]).toString()
+	this.endDate = newDate
 }
 public changeAuthor (event: any): void {
 this.createdBy = event.target.value

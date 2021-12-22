@@ -1,7 +1,7 @@
 <h3 class="title-text">Введите JSON</h3>
 <div class="data-page">
 <textarea class="text-area" placeholder="введите JSON..." rows= "25" cols="80" [(ngModel)]="data" (keydown.enter)="toSave()"></textarea>
-
+<div *ngIf="error">{{error}}</div>
 <button class="button-save" (click)="toSave()" >Сохранить</button>
 </div>
 

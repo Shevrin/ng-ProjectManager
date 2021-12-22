@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {map} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
-import { ProjectsService } from '../../services/projects.service';
+import { ProjectsService } from 'src/app/pages/services/projects.service';
 
 @Component({
   selector: 'app-projects',

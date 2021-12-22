@@ -1,6 +1,5 @@
 .title-text {
-  padding: 10px 45px 0;
-
+  padding: 10px 85px 0;
 }
 
 .title-page {
@@ -16,4 +15,6 @@
   margin: 10px 0;
   width: 300px;
   border-radius: 4px;
+  background-color: grey;
+  color: white;
 }

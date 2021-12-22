@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import {ProjectsService} from "../../services/projects.service";
+import { map, Observable, of } from 'rxjs';
+import {ProjectsService} from "src/app/pages/services/projects.service";
 
 @Component({
   selector: 'app-list',
@@ -8,6 +8,16 @@ import {ProjectsService} from "../../services/projects.service";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent{
-@Input() public projectsList: Array<any> = []
-	
+// @Input() public projectsList: Array<any> = []
+public projectsList$: Observable<Array<any>> = of([])
+
+constructor(public projectsService: ProjectsService )	{
+	this.projectsList$ = this.projectsService.project$.pipe(map(project => project.map(item => ({
+		id: item.id,
+      subject: item.subject,
+      createdBy: item.createdBy,
+      startDate: item.startDate,
+      endDate: item.endDate
+	}) )))
+}
 }
