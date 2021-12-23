@@ -23,7 +23,7 @@ export class ProjectsService {
 	  return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
   }
 
-	 public get list(): Array<any> {
+	public get list(): Array<any> {
     return this.listSubject.value;
   }
 
@@ -47,7 +47,6 @@ export class ProjectsService {
       startDate: item.startDate,
       endDate: item.endDate
     }))
-
   }
 
 	public toSave(data: string): string {
@@ -73,8 +72,6 @@ export class ProjectsService {
 
 	public saveChanges(id: string, elem: Record<string, any>){
 		let oldArr = this.getProjects()
-		
-		
 		let newArr: Array<Record<string, any>> = oldArr.map(item => {
 			if (item.id === id ) {
 					 item = elem
@@ -86,9 +83,5 @@ export class ProjectsService {
 
 		localStorage.setItem('Projects', JSON.stringify(newData) )
 		this.projects = this.getProjects();
-
 	}
-
-  constructor() {
-  }
 }

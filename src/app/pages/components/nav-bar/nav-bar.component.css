@@ -21,7 +21,3 @@
   font-size: 25px;
   color: black;
 }
-
-.disabled {
-  pointer-events: none;
-}
