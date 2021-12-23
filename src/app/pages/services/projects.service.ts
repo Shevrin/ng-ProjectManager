@@ -10,13 +10,11 @@ export class ProjectsService {
   public project$: Observable<Array<any>> = this.projectSubject.asObservable();
   
 	public getProjects(): Array<any> {
-		try {
-			JSON.parse(localStorage.getItem('Projects') as string)
-		} 
-		catch(e: any) {
-			return []
+		if (localStorage.getItem('Projects') && JSON.parse(localStorage.getItem('Projects') as string)){
+	  	return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
 		}
-	  return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
+		return [];
+		
   }
 
 	 public get projects(): Array<any> {
