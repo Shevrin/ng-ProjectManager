@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { map, Observable, of } from 'rxjs';
+
 import {ProjectsService} from "src/app/pages/services/projects.service";
 
 @Component({

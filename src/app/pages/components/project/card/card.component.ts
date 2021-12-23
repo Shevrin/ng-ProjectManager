@@ -20,19 +20,17 @@ export class CardComponent implements OnChanges {
 
 	public newData: Record<string, any> = {}
 
-
-	add(){
-
-	if (this.cardProject) {
-	this.cardProject["subject"] = this.subject
-	this.cardProject["startDate"] = this.startDate
-	this.cardProject["endDate"] = this.endDate
-	this.cardProject["createdBy"] = this.createdBy
-	this.cardProject["description"] = this.description
-	this.projectsService.saveChanges(this.id, this.cardProject)
+	public add() : void {
+		if (this.cardProject) {
+			this.cardProject["subject"] = this.subject
+			this.cardProject["startDate"] = this.startDate
+			this.cardProject["endDate"] = this.endDate
+			this.cardProject["createdBy"] = this.createdBy
+			this.cardProject["description"] = this.description
+			this.projectsService.saveChanges(this.id, this.cardProject)
+		}
 	}
 
-	}
 	public changeDescription (event: any): void{
 		this.description = event.target.value
 	}
@@ -62,12 +60,12 @@ export class CardComponent implements OnChanges {
  	public ngOnChanges(): void {
 		this.cardProject = this.projectsService.getCard(this.idProject as string);
 		if (this.cardProject) {
-		this.id = this.cardProject['id']
-		this.startDate = this.cardProject['startDate']
-		this.endDate = this.cardProject['endDate']
-		this.createdBy = this.cardProject['createdBy']
-		this.subject = this.cardProject['subject']
-		this.description = this.cardProject['description']
+			this.id = this.cardProject['id']
+			this.startDate = this.cardProject['startDate']
+			this.endDate = this.cardProject['endDate']
+			this.createdBy = this.cardProject['createdBy']
+			this.subject = this.cardProject['subject']
+			this.description = this.cardProject['description']
 		}
   	if (!this.cardProject) {
     	this.error = 'Такой проект не найден';

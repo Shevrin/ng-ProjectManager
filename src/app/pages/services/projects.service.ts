@@ -17,7 +17,6 @@ export class ProjectsService {
 			JSON.parse(localStorage.getItem('Projects') as string)
 		} 
 		catch(e: any) {
-			console.log(e);
 			return []
 		}
 	  return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
@@ -78,8 +77,9 @@ export class ProjectsService {
 				}
 			return item
 			})
-			let newData: Record<string, any> = {"Projects": []}
-			newData['Projects'] = newArr
+		
+		let newData: Record<string, any> = {"Projects": []}
+		newData['Projects'] = newArr
 
 		localStorage.setItem('Projects', JSON.stringify(newData) )
 		this.projects = this.getProjects();

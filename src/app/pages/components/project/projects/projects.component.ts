@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {map} from 'rxjs/operators';
+
 import {Observable, of} from 'rxjs';
+import {map} from 'rxjs/operators';
+
 import { ProjectsService } from 'src/app/pages/services/projects.service';
 
 @Component({
