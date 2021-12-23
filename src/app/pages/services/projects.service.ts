@@ -6,9 +6,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ProjectsService {
 
-  public listSubject: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>(this.getList());
-  public list$: Observable<Array<any>> = this.listSubject.asObservable();
-
   public projectSubject: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>(this.getProjects());
   public project$: Observable<Array<any>> = this.projectSubject.asObservable();
   
@@ -20,14 +17,6 @@ export class ProjectsService {
 			return []
 		}
 	  return JSON.parse(localStorage.getItem('Projects') as string)['Projects'];
-  }
-
-	public get list(): Array<any> {
-    return this.listSubject.value;
-  }
-
-  public set list(list: Array<Record<string, any>> ) {
-    this.listSubject.next(list)
   }
 
 	 public get projects(): Array<any> {
